@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #FBEAEB;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  main {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fac0a3;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .date {
+    font-size: 24px;
+    margin-bottom: 5%;
+    background-color: rgb(147, 172, 247);
+    color: #fff; 
+    padding: 10px 20px;
+    border-radius: 10px; 
+    display: inline-block; 
+  }
+  
+  .info {
+    color: #3c3c3c; 
+    margin-top: 3%;
+    font-family:cursive
+  }  
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #eee;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  button[type="submit"] {
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  ul form button[type="submit"] {
+    background-color: #e74c3c;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #767676;
+    position: absolute;
+    bottom: 0;
+    width: 99.505%;
+    text-align: center;
+    margin-bottom: 1%;
+  }
+  
+  li:hover {
+    background-color: #ddd;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+.strikethrough {
+    text-decoration: line-through;
+    color: #888;
+  }
+
+.delete-button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .delete-button:hover {
+    background-color: #c0392b;
+  }
+
+  li form {
+    margin-left: auto;
+  }
+  
+  .item-checkbox:checked + label {
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  .item-checkbox {
+    margin-right: 1%;
+  }
+  
+.input-container {
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .input-container input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .input-container input:focus {
+    border-color: #0074d9;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 116, 217, 0.5);
+  }
+  

@@ -1,0 +1,35 @@
+<center>
+    <h1 class="info"> Keep a track of your task!</h1>
+</center>
+<%- include("partials/header.ejs") %>
+
+<h1 class="date"><%= today %></h1>
+
+<ul>
+    <% for (let i = 0; i < newItem.length; i++) { %>
+      <li>
+        <input type="checkbox" class="item-checkbox" id="item<%= i %>" />
+        <label for="item<%= i %>"><%= newItem[i] %></label>
+        <form action="/delete" method="POST">
+          <input type="hidden" name="itemIndex" value="<%= i %>" />
+          <button type="submit" class="delete-button">Delete</button>
+        </form>
+      </li>
+    <% } %>
+    <form action="/" method="POST">
+      <div class="input-container">
+        <input type="text" class="newItem" name="newItem" autocomplete="off" />
+        <button style="font-size: 15px;" type="submit">Add</button>
+      </div>
+    </form>
+</ul>
+<script>
+    const checkboxes = document.querySelectorAll('.item-checkbox');
+    checkboxes.forEach((checkbox, index) => {
+      checkbox.addEventListener('change', () => {
+        const label = document.querySelector(`label[for="item${index}"]`);
+        label.classList.toggle('strikethrough');
+      });
+    });
+</script>
+<%- include("partials/footer.ejs") %>
