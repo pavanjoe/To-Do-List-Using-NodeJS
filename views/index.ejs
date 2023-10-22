@@ -1,25 +1,26 @@
 <center>
-    <h1 class="info"> Keep a track of your task!</h1>
+    <h1 class="info"> Keep a track of your tasks!</h1>
 </center>
 <%- include("partials/header.ejs") %>
 
-<h1 class="date"><%= today %></h1>
+<h1 class="date"><%= title %></h1>
 
 <ul>
-    <% for (let i = 0; i < newItem.length; i++) { %>
+    <% newItem.forEach(function(item, i) { %>
       <li>
         <input type="checkbox" class="item-checkbox" id="item<%= i %>" />
-        <label for="item<%= i %>"><%= newItem[i] %></label>
+        <label for="item<%= i %>"><%= item.name %></label>
         <form action="/delete" method="POST">
-          <input type="hidden" name="itemIndex" value="<%= i %>" />
+          <input type="hidden" name="ObjectID" value="<%= item._id %>" />
+          <input type="hidden" name="listName" value="<%= title %>" />
           <button type="submit" class="delete-button">Delete</button>
         </form>
       </li>
-    <% } %>
+    <% }); %>
     <form action="/" method="POST">
       <div class="input-container">
-        <input type="text" class="newItem" name="newItem" autocomplete="off" />
-        <button style="font-size: 15px;" type="submit">Add</button>
+        <input type="text" class="newItem" name="newItem" autocomplete="off" placeholder="Add new task"/>
+        <button name="list" value="<%= title %>" style="background-color: rgb(255, 0, 0); font-size: 30px; border-radius: 50%; width: 40px; height: 40px; transform: translateY(5px);" type="submit">+</button>
       </div>
     </form>
 </ul>
